@@ -1,10 +1,18 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+
+import AppHeader from './components/AppHeader.vue';
+
+export default {
+  name: "App",
+  components: {
+    AppHeader
+  }
+}
 </script>
 
 <template>
 
-  <HelloWorld msg="Vite + Vue" />
+  <AppHeader />
   <!-- header -->
 
   <!-- section request callback -->
@@ -22,6 +30,7 @@ import HelloWorld from './components/HelloWorld.vue'
   <!-- footer -->
 </template>
 
-<style >
-
+<style lang="scss">
+@use './styles/generals.scss' as*;
+@use './styles/partials/variables' as*;
 </style>
