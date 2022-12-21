@@ -1,11 +1,13 @@
 <script>
 
 import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   name: "App",
   components: {
-    AppHeader
+    AppHeader,
+    AppFooter
   }
 }
 </script>
@@ -13,21 +15,23 @@ export default {
 <template>
 
   <AppHeader />
-  <!-- header -->
 
-  <!-- section request callback -->
+  <main>
+    <!-- section request callback -->
 
-  <!-- section courses -->
+    <!-- section courses -->
 
-  <!-- section instructor -->
+    <!-- section instructor -->
 
-  <!-- section testimonials -->
+    <!-- section testimonials -->
 
-  <!-- section latest news -->
+    <!-- section latest news -->
 
-  <!-- section newsletter -->
+    <!-- section newsletter -->
+  </main>
 
   <!-- footer -->
+  <AppFooter />
 </template>
 
 <style lang="scss">
