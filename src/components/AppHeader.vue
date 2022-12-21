@@ -88,7 +88,16 @@ export default {
                 <h3>We offer the finest driving tuition money can buy</h3>
             </div>
 
-
+            <div class="stickers">
+                <div>
+                    <i class="fa-solid fa-book"></i>
+                    <span class="txt-sticker">Demos</span>
+                </div>
+                <div>
+                    <span class="green">&dollar; 39</span>
+                    <span class="txt-sticker">On Sale</span>
+                </div>
+            </div>
 
         </div>
 
@@ -105,11 +114,16 @@ export default {
     height: 40px;
     width: 100%;
     background-color: #353637;
+    font-size: $small-font;
 
     .container {
         height: 100%;
         @include flex(both);
         color: $light-grey;
+
+        i {
+            padding-right: 10px;
+        }
     }
 }
 
@@ -167,6 +181,39 @@ export default {
     h1 {
         font-size: 40px;
         padding-bottom: 10px;
+    }
+
+    .stickers {
+        position: absolute;
+        right: 15px;
+        top: 110px;
+
+        i {
+            color: #32465a;
+        }
+
+        .green {
+            color: $primary;
+            font-weight: bolder;
+        }
+
+        div {
+            text-align: center;
+            padding: 10px 5px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            border-radius: 15px;
+        }
+
+        span {
+            display: block;
+
+            &.txt-sticker {
+                color: #32465a;
+                font-size: $small-font;
+                padding-top: 5px;
+            }
+        }
     }
 }
 </style>
