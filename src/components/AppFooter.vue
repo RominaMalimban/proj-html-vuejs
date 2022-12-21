@@ -1,6 +1,29 @@
 <script>
 export default {
-    name: "AppFooter"
+    name: "AppFooter",
+    data() {
+        return {
+            // array di oggetti per social in su-footer
+            socials: [
+                {
+                    name: 'Facebook',
+                    icon: 'fa-facebook-f'
+                },
+                {
+                    name: 'Twitter',
+                    icon: 'fa-twitter'
+                },
+                {
+                    name: 'YouTube',
+                    icon: 'fa-youtube'
+                },
+                {
+                    name: 'Instagram',
+                    icon: 'fa-instagram'
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -23,17 +46,8 @@ export default {
 
                 <div class="socials">
                     <ul>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <li v-for="social in socials" :key="social.name">
+                            <a href="#"><i class="fa-brands" :class="social.icon"></i></a>
                         </li>
                     </ul>
                 </div>
