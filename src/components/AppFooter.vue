@@ -3,7 +3,8 @@ export default {
     name: "AppFooter",
     data() {
         return {
-            // array di oggetti per social in su-footer
+            logo: "img/avada-drivers-logo-2x-200x39.png",
+            // array di oggetti per social in sub-footer:
             socials: [
                 {
                     name: 'Facebook',
@@ -32,6 +33,19 @@ export default {
     <footer>
         <!-- top-footer -->
         <div class="top-footer">
+
+            <div class="container">
+                <div>
+                    <img :src="logo" alt="logo">
+                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique doloremque commodi, maiores
+                        unde illum minus delectus nihil dolore natus quo, reiciendis exercitationem molestias dolores
+                        qui obcaecati laboriosam animi, assumenda vitae?
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
 
         </div>
 
@@ -64,8 +78,11 @@ export default {
 
 .top-footer {
     background-image: url(../../public/img/footer-background-color.jpg);
-    // debug
-    height: 300px;
+    padding: 30px 0;
+
+    .container {
+        @include flex(both)
+    }
 }
 
 .sub-footer {
