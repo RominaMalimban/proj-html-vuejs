@@ -50,7 +50,7 @@ export default {
 
             <!-- parte dx -->
             <div class="dx">
-                <h2>First Lesson Free!</h2>
+                <h3>First Lesson Free!</h3>
                 <span>When you make a block booking with us your first lesson is included free.</span>
 
                 <!-- form -->
@@ -90,7 +90,6 @@ section {
 
         h2 {
             color: $gray-title;
-            font-size: 30px;
 
             +p {
                 margin: 30px 0;
@@ -114,7 +113,7 @@ section {
         right: 0;
         box-shadow: 0px 20px 10px 0px #ececec;
 
-        h2 {
+        h3 {
             margin-bottom: 50px;
             color: $primary;
         }
