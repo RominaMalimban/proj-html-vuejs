@@ -1,0 +1,30 @@
+// REGOLE GENERALI:
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+// LAYOUT:
+.container {
+    width: 80%;
+    max-width: 1200px;
+    // debug
+    border: 1px solid black;
+}
