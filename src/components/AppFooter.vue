@@ -15,9 +15,30 @@ export default {
         <!-- sub-footer -->
         <div class="sub-footer">
             <div class="container">
-                &copy; Copyright 2 012 - 2020 | Avada Theme by <span>ThemeFusion</span> | All Rights Reserved | Powered
-                by <span>Wordpress</span>
+                <div>
+                    &copy; Copyright 2 012 - 2020 | Avada Theme by <span>ThemeFusion</span> | All Rights Reserved |
+                    Powered
+                    by <span>Wordpress</span>
+                </div>
+
+                <div class="socials">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </footer>
 
@@ -40,10 +61,26 @@ export default {
         padding: 60px 0;
         font-size: $small-font;
         color: #676360;
+        @include flex (both);
 
         span {
             color: $primary;
         }
+
+        .socials {
+            ul {
+                display: flex;
+
+                a {
+                    color: #fff;
+                    padding-left: 15px;
+                }
+            }
+
+
+        }
+
+
     }
 }
 </style>
