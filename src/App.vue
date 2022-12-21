@@ -3,7 +3,8 @@
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import SignUp from './components/SignUp.vue';
-import AppBand from './components/AppBand.vue'
+import AppBand from './components/AppBand.vue';
+import AppMain from './components/AppMain.vue'
 
 export default {
   name: "App",
@@ -11,7 +12,8 @@ export default {
     AppHeader,
     AppFooter,
     SignUp,
-    AppBand
+    AppBand,
+    AppMain
   }
 }
 </script>
@@ -20,20 +22,18 @@ export default {
 
   <AppHeader />
 
-  <main>
+  <SignUp />
 
-    <SignUp />
+  <AppBand />
 
-    <AppBand />
+  <AppMain />
+  <!-- section instructor -->
 
-    <!-- section instructor -->
+  <!-- section testimonials -->
 
-    <!-- section testimonials -->
+  <!-- section latest news -->
 
-    <!-- section latest news -->
-
-    <!-- section newsletter -->
-  </main>
+  <!-- section newsletter -->
 
 
   <AppFooter />
