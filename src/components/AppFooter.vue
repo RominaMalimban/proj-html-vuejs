@@ -88,7 +88,7 @@ export default {
 
                 <!-- contatti -->
                 <div class="contacts">
-                    <h3>CONTACT DETAILS</h3>
+                    <h4>CONTACT DETAILS</h4>
                     <ul>
                         <li v-for="(contact, index) in contacts" :key="index">
                             <i class="fa-solid" :class="contact.icon"></i>
@@ -99,7 +99,7 @@ export default {
 
                 <!-- corsi -->
                 <div class="courses">
-                    <h3>COURSES</h3>
+                    <h4>COURSES</h4>
                     <ul>
                         <li v-for="course in courses">
                             <i :class="course.icon"></i>
@@ -153,7 +153,7 @@ export default {
         @include flex(both);
         color: $light-grey;
 
-        h3 {
+        h4 {
             color: #fff;
         }
 
