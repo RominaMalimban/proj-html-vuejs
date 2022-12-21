@@ -2,12 +2,13 @@
 
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-
+import SignUp from './components/SignUp.vue'
 export default {
   name: "App",
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
+    SignUp
   }
 }
 </script>
@@ -17,8 +18,8 @@ export default {
   <AppHeader />
 
   <main>
-    <!-- section request callback -->
 
+    <SignUp />
     <!-- section courses -->
 
     <!-- section instructor -->
@@ -30,7 +31,7 @@ export default {
     <!-- section newsletter -->
   </main>
 
-  <!-- footer -->
+
   <AppFooter />
 </template>
 
