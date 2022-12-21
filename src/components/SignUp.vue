@@ -1,6 +1,28 @@
 <script>
 export default {
-    name: "SignUp"
+    name: "SignUp",
+    data() {
+        return {
+            fields: [
+                {
+                    type: "text",
+                    placeholder: "Your Name*"
+                },
+                {
+                    type: "text",
+                    placeholder: "Email*"
+                },
+                {
+                    type: "text",
+                    placeholder: "Telephone"
+                },
+                {
+                    type: "text",
+                    placeholder: "Location"
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -32,11 +54,8 @@ export default {
                 <span>When you make a block booking with us your first lesson is included free.</span>
 
                 <!-- form -->
-                <form>
-                    <input type="text" placeholder="You Name*">
-                    <input type="text" placeholder="Email*">
-                    <input type="text" placeholder="Telephone">
-                    <input type="text" placeholder="Location">
+                <form v-for="field in fields">
+                    <input :type="field.type" :placeholder="field.placeholder">
                 </form>
 
                 <a href="#">REQUEST A CALLBACK</a>
@@ -111,10 +130,10 @@ section {
 
             input {
                 padding: 10px;
-                margin: 10px 0;
                 background-color: #f7f7f7;
-                border: 1px solid #a7adb5;
-                border-radius: 3px;
+                border: 1px solid #dfdfdf;
+                border-radius: 5px;
+                font-size: $smaller-font;
             }
         }
 
