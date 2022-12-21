@@ -4,6 +4,48 @@ export default {
     data() {
         return {
             logo: "img/avada-drivers-logo-2x-200x39.png",
+            imgTopFooter: "img/footer-tab.png",
+
+            // array di oggetti per contatti in top-footer:
+            contacts: [
+                {
+                    icon: 'fa-solid fa-house',
+                    text: '12345 North Main Street, New York, NY 555555',
+                },
+                {
+                    icon: 'fa-phone-flip',
+                    text: '1.800.555.6789',
+                },
+                {
+                    icon: 'fa-envelope',
+                    text: 'info@your-domain.com',
+                },
+                {
+                    icon: 'fa-solid fa-link',
+                    text: 'Theme-Fusion.com',
+                },
+            ],
+
+            // array di oggetti per corsi in sub-footer:
+            courses: [
+                {
+                    icon: 'fa-solid fa-arrow-right',
+                    text: 'Pass Plus'
+                },
+                {
+                    icon: 'fa-solid fa-arrow-right',
+                    text: 'Intensive Course'
+                },
+                {
+                    icon: 'fa-solid fa-arrow-right',
+                    text: 'Automatic'
+                },
+                {
+                    icon: 'fa-solid fa-arrow-right',
+                    text: 'Instructor Training'
+                },
+            ],
+
             // array di oggetti per social in sub-footer:
             socials: [
                 {
@@ -35,19 +77,46 @@ export default {
         <div class="top-footer">
 
             <div class="container">
-                <div>
+                <!-- logo -->
+                <div class="logo">
                     <img :src="logo" alt="logo">
                     <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique doloremque commodi, maiores
                         unde illum minus delectus nihil dolore natus quo, reiciendis exercitationem molestias dolores
                         qui obcaecati laboriosam animi, assumenda vitae?
                     </div>
                 </div>
-                <div></div>
-                <div></div>
-                <div></div>
+
+                <!-- contatti -->
+                <div class="contacts">
+                    <h3>CONTACT DETAILS</h3>
+                    <ul>
+                        <li v-for="(contact, index) in contacts" :key="index">
+                            <i class="fa-solid" :class="contact.icon"></i>
+                            <span>{{ contact.text }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- corsi -->
+                <div class="courses">
+                    <h3>COURSES</h3>
+                    <ul>
+                        <li v-for="course in courses">
+                            <i :class="course.icon"></i>
+                            <span>{{ course.text }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- book now -->
+                <div class="book">
+                    <img :src="imgTopFooter" alt="">
+                    <a href="#" class="btn">BOOK NOW</a>
+                </div>
             </div>
 
         </div>
+        <!-- chiusura top-footer -->
 
         <!-- sub-footer -->
         <div class="sub-footer">
@@ -78,10 +147,81 @@ export default {
 
 .top-footer {
     background-image: url(../../public/img/footer-background-color.jpg);
-    padding: 30px 0;
+    padding: 60px 0;
 
     .container {
-        @include flex(both)
+        @include flex(both);
+        color: $light-grey;
+
+        h3 {
+            color: #fff;
+        }
+
+        ul li {
+            padding: 10px 0;
+        }
+
+        .logo {
+            width: 30%;
+
+            div {
+                font-size: $small-font;
+                padding-top: 15px;
+            }
+        }
+
+        .contacts {
+            h3 {
+                padding-bottom: 10px;
+
+            }
+
+            ul li {
+                font-size: $small-font;
+
+                i {
+                    color: #b5c4cc;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        .courses {
+
+            h3 {
+                padding: 5px 0;
+            }
+
+            ul li {
+                font-size: 13px;
+                color: $primary;
+
+                i {
+                    font-size: $smaller-font;
+                    border: 3px solid $primary;
+                    padding: 2px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .book {
+            width: 25%;
+            text-align: center;
+
+            .btn {
+                color: #fff;
+                background-color: $primary;
+                padding: 10px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                text-align: center;
+                margin-top: 15px;
+                width: auto;
+            }
+
+        }
     }
 }
 
@@ -90,8 +230,8 @@ export default {
 
     .container {
         padding: 60px 0;
-        font-size: $small-font;
-        color: #676360;
+        font-size: $smaller-font;
+        color: $light-grey;
         @include flex (both);
 
         span {
@@ -107,11 +247,7 @@ export default {
                     padding-left: 15px;
                 }
             }
-
-
         }
-
-
     }
 }
 </style>
