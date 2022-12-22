@@ -185,13 +185,7 @@ export default {
             }
 
             .btn {
-                font-size: 14px;
-                font-weight: bold;
-                color: #fff;
-                background-color: $primary;
-                padding: 10px 20px;
-                border-radius: 30px;
-                margin-left: 30px;
+                @include button
             }
 
         }
