@@ -84,7 +84,7 @@ section {
     }
 
     .sx {
-        color: #a7adb5;
+        color: $gray-text;
         width: 60%;
         padding-right: 50px;
 
@@ -119,7 +119,7 @@ section {
         }
 
         span {
-            color: #a7adb5;
+            color: $gray-text;
         }
 
         form {

@@ -1,10 +1,12 @@
 <script>
 import Newsletter from './Newsletter.vue';
+import Testimonials from './Testimonials.vue'
 
 export default {
     name: "AppMain",
     components: {
-        Newsletter
+        Newsletter,
+        Testimonials
     }
 }
 </script>
@@ -16,7 +18,7 @@ export default {
 
         </div>
     </section> -->
-
+    <Testimonials />
     <Newsletter />
 </template>
 
@@ -25,7 +27,7 @@ export default {
 @use '../styles/partials/mixins' as*;
 
 // section {
-//     background-image: url(../../public/img/promise-background.jpg);
+//     background-image: url(/img/promise-background.jpg);
 //     background-position: left center;
 
 //     // debug
