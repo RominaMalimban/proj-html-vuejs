@@ -1,7 +1,7 @@
 <script>
 import Newsletter from './Newsletter.vue';
 import Testimonials from './Testimonials.vue';
-import LatestNewsVue from './LatestNews.vue';
+import LatestNews from './LatestNews.vue';
 
 export default {
     name: "AppMain",
