@@ -64,7 +64,7 @@ section {
     background-position: cover;
     background-position: 0% 68%;
     // debug
-    min-height: 500px;
+    // min-height: 500px;
 
     .container {
         display: flex;
@@ -82,8 +82,7 @@ section {
         position: relative;
         top: -20px;
         border-radius: 10px;
-        // debug
-        border: 1px solid black;
+        box-shadow: 0px 20px 10px 0px #bfbebe;
 
         h2 {
             color: $gray-title;
