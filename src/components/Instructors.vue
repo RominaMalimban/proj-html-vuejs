@@ -112,7 +112,13 @@ export default {
             i {
                 padding: 10px;
             }
+
+            &:hover img {
+                box-shadow: 0px 20px 10px 0px #b7bec2;
+            }
         }
+
+
     }
 
 

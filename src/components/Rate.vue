@@ -57,7 +57,7 @@ section {
 
         .cards {
             position: relative;
-            top: -80px;
+            top: -130px;
             display: flex;
             margin: -5px;
 

@@ -41,10 +41,11 @@ section {
     .container {
         text-align: center;
         color: $gray-text;
+        padding-bottom: 80px;
 
         h2 {
             color: $gray-title;
-            margin-bottom: 30px;
+            margin: 80px 0 30px;
         }
 
         img {

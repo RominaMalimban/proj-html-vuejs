@@ -83,6 +83,7 @@ section {
         top: -20px;
         border-radius: 10px;
         box-shadow: 0px 20px 10px 0px #bfbebe;
+        margin-bottom: 100px;
 
         h2 {
             color: $gray-title;
