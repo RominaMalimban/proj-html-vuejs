@@ -3,6 +3,7 @@ import Newsletter from './Newsletter.vue';
 import Testimonials from './Testimonials.vue';
 import LatestNews from './LatestNews.vue';
 import Instructors from './Instructors.vue';
+import Courses from './Courses.vue';
 import Rate from './Rate.vue';
 
 export default {
@@ -12,12 +13,14 @@ export default {
         Testimonials,
         LatestNews,
         Instructors,
-        Rate
+        Rate,
+        Courses
     }
 }
 </script>
 
 <template>
+    <Courses />
     <Rate />
     <Instructors />
     <Testimonials />
