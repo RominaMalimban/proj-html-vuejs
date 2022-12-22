@@ -25,7 +25,8 @@ export default {
                 {
                     text: "COURSES",
                     url: "#",
-                    current: false
+                    current: false,
+                    label: "NEW"
                 },
                 {
                     text: "HOME",
@@ -70,15 +71,21 @@ export default {
             <nav>
                 <div class="container">
                     <a href="#">
-                        <img :src="logo" alt="">
+                        <img :src="logo" alt="logo">
                     </a>
-                    <ul>
-                        <li v-for="(link, index) in links" :key="index">
-                            <a :href="link.url" :class="{ active: link.current }">{{ link.text }}</a>
-                        </li>
-                    </ul>
 
-                    <a href="#" class="btn">BOOK NOW</a>
+                    <div class="dx">
+                        <ul>
+                            <li v-for="(link, index) in links" :key="index">
+                                <a :href="link.url" :class="{ active: link.current }">{{ link.text }}</a>
+                                <span v-if="link.label" class="new-label">{{ link.label }}</span>
+                            </li>
+
+                        </ul>
+
+                        <a href="#" class="btn">BOOK NOW</a>
+                    </div>
+
                 </div>
             </nav>
             <!-- chiusura nav bar -->
@@ -100,8 +107,6 @@ export default {
             </div>
 
         </div>
-
-
         <!-- header bottom -->
     </header>
 </template>
@@ -146,28 +151,47 @@ export default {
             // height: 100%;
             @include flex(both);
 
+            .dx {
+                @include flex(both)
+            }
+
             ul {
                 @include flex(both);
 
                 li {
-                    padding-left: 40px;
+                    padding-left: 30px;
 
                     a {
                         color: #fff;
+                        font-size: 14px;
+                        font-weight: bold;
 
                         &.active {
                             color: $primary;
                             border-bottom: 3px solid $primary;
                         }
                     }
+
+                    .new-label {
+                        color: white;
+                        font-size: 12px;
+                        margin-left: 5px;
+                        background-color: $primary;
+                        padding: 3px 5px;
+                        border-radius: 3px;
+                        font-weight: bold;
+                    }
                 }
             }
 
             .btn {
+                font-size: 14px;
+                font-weight: bold;
                 color: #fff;
                 background-color: $primary;
                 padding: 10px 20px;
                 border-radius: 30px;
+                margin-left: 30px;
             }
 
         }
