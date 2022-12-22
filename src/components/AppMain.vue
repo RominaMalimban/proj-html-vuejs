@@ -3,6 +3,7 @@ import Newsletter from './Newsletter.vue';
 import Testimonials from './Testimonials.vue';
 import LatestNews from './LatestNews.vue';
 import Instructors from './Instructors.vue';
+import Rate from './Rate.vue';
 
 export default {
     name: "AppMain",
@@ -10,12 +11,14 @@ export default {
         Newsletter,
         Testimonials,
         LatestNews,
-        Instructors
+        Instructors,
+        Rate
     }
 }
 </script>
 
 <template>
+    <Rate />
     <Instructors />
     <Testimonials />
     <LatestNews />
