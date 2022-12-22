@@ -185,7 +185,8 @@ export default {
             }
 
             .btn {
-                @include button
+                @include button;
+                padding: 10px 20px;
             }
 
         }
