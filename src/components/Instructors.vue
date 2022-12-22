@@ -28,7 +28,7 @@ export default {
 <template>
     <section>
         <div class="container">
-            <h2>Your Instructor</h2>
+            <h2>Your Instructors</h2>
             <div class="top">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus id fugiat mollitia incidunt hic
@@ -38,6 +38,7 @@ export default {
                 <a href="#">MORE ABOUT US</a>
             </div>
 
+            <!-- card -->
             <div class="cards">
                 <div class="card" v-for="(instructor, index) in instructors" :key="index">
                     <img :src="instructor.image" :alt="instructor.name">
@@ -72,32 +73,32 @@ export default {
         padding: 55px 0 80px;
 
         p {
-            color: $gray-text;
+            color: $navy;
         }
 
         a {
             @include button;
-            width: 40%;
+            width: 35%;
             text-align: center;
             padding: 10px 40px;
         }
     }
 
+    // regole cards
     .cards {
-        display: flex;
+        @include flex(flex);
         margin-inline: - 5px;
-        // position: absolute;
 
         .card {
             width: calc(100% / 3 - 10px);
             margin-inline: 5px;
             text-align: center;
-            padding: 40px 40px 60px;
+            padding: 40px 40px 80px;
             border: 1px solid #c1c1c1;
             border-top: 7px solid $primary;
             border-radius: 10px;
             box-shadow: 0px 20px 10px 0px #b7bec2;
-            background-color: #fff;
+            background-color: $white;
 
             h4 {
                 padding: 30px 0 15px;
@@ -106,7 +107,8 @@ export default {
 
             i,
             p {
-                color: $gray-text ;
+                color: $navy;
+                line-height: 25px;
             }
 
             i {
@@ -114,6 +116,7 @@ export default {
             }
 
             &:hover img {
+                scale: 1.1;
                 box-shadow: 0px 20px 10px 0px #b7bec2;
             }
         }
@@ -121,10 +124,9 @@ export default {
 
     }
 
-
     .cards .card:nth-child(1),
     .cards .card:nth-child(3) {
-        height: 420px;
+        height: 450px;
     }
 }
 </style>

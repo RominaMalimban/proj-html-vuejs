@@ -1,33 +1,19 @@
 <script>
+
+import SingleCourse from './SingleCourse.vue';
 export default {
     name: "Courses",
-    data() {
-        return {
-            courses: [
-                {
-                    name: 'Pass Plus',
-                    image: 'img/courses-passplus-200x200.jpg',
-                    description: 'LEARN MORE'
-                },
-                {
-                    name: 'Intensive Course',
-                    image: 'img/course-intensive-200x200.jpg',
-                    description: 'LEARN MORE'
-                },
-                {
-                    name: 'Instructors',
-                    image: 'img/courses-instructor-200x200.jpg',
-                    description: 'LEARN MORE'
-                },
-            ]
-        }
-    }
+    components: {
+        SingleCourse
+    },
+
 }
 </script>
 
 <template>
     <section>
         <div class="container">
+            <!-- card grande 'courses' -->
             <div class="courses">
                 <h2>Courses</h2>
                 <p>
@@ -39,16 +25,13 @@ export default {
                     <img src="/img/new-corner.jpg" alt="">
                 </div>
             </div>
+            <!-- chiusura card grande 'courses' -->
 
-            <div class="cards" v-for="(course, index) in courses" :key="index">
-                <div class="card">
-                    <img :src="course.image" :alt="course.name">
-                    <h4>{{ course.name }}</h4>
-                    <a href="#">{{ course.description }}</a>
-                </div>
-            </div>
+            <SingleCourse />
         </div>
     </section>
+
+    <!-- svg triangolo rovesciato -->
     <svg class="fusion-big-triangle-candy" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100"
         viewBox="0 0 100 100" preserveAspectRatio="none" style="fill:#e4eaed;padding:0;">
         <path d="M-1 -1 L50 99 L101 -1 Z"></path>
@@ -63,43 +46,24 @@ section {
     background-image: url(/img/promise-background.jpg);
     background-position: cover;
     background-position: 0% 68%;
-    // debug
-    // min-height: 500px;
 
     .container {
-        display: flex;
+        @include flex (flex);
     }
 
+    // regole div courses
     .courses {
-        background-color: #fff;
-        width: 40%;
-        padding: 120px 50px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
+        @include flex(col-center);
         justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -20px;
+        text-align: center;
+        background-color: $white;
         border-radius: 10px;
         box-shadow: 0px 20px 10px 0px #bfbebe;
-        margin-bottom: 100px;
-
-        h2 {
-            color: $gray-title;
-        }
-
-        p {
-            padding: 40px 0;
-            line-height: 30px;
-            color: $gray-text;
-        }
-
-        a {
-            @include button;
-            padding: 10px;
-            width: 60%;
-        }
+        width: 40%;
+        padding: 80px 50px;
+        margin-bottom: 110px;
+        position: relative;
+        top: -35px;
 
         .new {
             position: absolute;
@@ -111,35 +75,21 @@ section {
                 border-top-left-radius: 10px;
             }
         }
-    }
 
-    .cards {
-        margin-left: 30px;
-        display: flex;
-        padding: 50px 15px;
-        text-align: center;
-        // width: 60%;
+        h2 {
+            color: $gray-title;
+        }
 
-        .card {
-            // padding: 0 15px;
-            // debug
-            // border: 1px solid black;
+        p {
+            padding: 40px 0;
+            line-height: 30px;
+            color: $navy;
+        }
 
-            h4 {
-                padding: 20px 0;
-                color: #7697ac;
-            }
-
-            a {
-                font-size: 12px;
-                font-weight: bold;
-                color: #7697ac;
-                border-radius: 30px;
-                border: 3px solid #7697ac;
-                border-radius: 30px;
-                padding: 5px 10px;
-
-            }
+        a {
+            @include button;
+            padding: 10px;
+            width: 60%;
         }
     }
 }

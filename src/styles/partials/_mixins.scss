@@ -5,6 +5,8 @@
 @mixin flex ($type) {
     display: flex;
 
+    @if $type =='flex' {}
+
     @if $type =='between' {
         justify-content: space-between;
     }
@@ -17,19 +19,25 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    @else if $type =='column' {
+        flex-direction: column;
+    }
+
+    @else if $type =='col-center' {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 // REGOLE BUTTONS: 
 @mixin button {
     font-size: 14px;
-    color: #fff;
+    color: $white;
     background-color: $primary;
     border-radius: 30px;
-    margin-left: 30px;
 
     &:hover {
-        background-color: #fff;
-        border: 4px solid $primary;
-        color: $primary;
+        background-color: #5f9b4b;
     }
 }

@@ -80,10 +80,10 @@ export default {
                 <!-- logo -->
                 <div class="logo">
                     <img :src="logo" alt="logo">
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique doloremque commodi, maiores
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique doloremque commodi, maiores
                         unde illum minus delectus nihil dolore natus quo, reiciendis exercitationem molestias dolores
                         qui obcaecati laboriosam animi, assumenda vitae?
-                    </div>
+                    </p>
                 </div>
 
                 <!-- contatti -->
@@ -111,7 +111,7 @@ export default {
                 <!-- book now -->
                 <div class="book">
                     <img :src="imgTopFooter" alt="">
-                    <a href="#" class="btn">BOOK NOW</a>
+                    <a href="#">BOOK NOW</a>
                 </div>
             </div>
 
@@ -135,8 +135,9 @@ export default {
                     </ul>
                 </div>
             </div>
-
         </div>
+
+        <!-- chiusura sub-footer -->
     </footer>
 
 </template>
@@ -145,13 +146,14 @@ export default {
 @use '../styles/partials/variables' as*;
 @use '../styles/partials/mixins' as*;
 
+// regole top-footer:
 .top-footer {
-    background-image: url(../../public/img/footer-background-color.jpg);
+    background-image: url(/img/footer-background-color.jpg);
     padding: 60px 0;
 
     .container {
         @include flex(both);
-        color: $light-grey;
+        color: #586c79;
 
         h4 {
             color: #fff;
@@ -159,45 +161,43 @@ export default {
 
         ul li {
             padding: 10px 0;
+            font-size: $small-font;
+
+            &:hover {
+                color: #cecece;
+            }
         }
 
         .logo {
             width: 30%;
 
-            div {
+            p {
                 font-size: $small-font;
                 padding-top: 15px;
+                line-height: 30px;
             }
         }
 
+        // regole contacts:
         .contacts {
-            h3 {
-                padding-bottom: 10px;
-
+            h4 {
+                margin-bottom: 15px;
             }
 
-            ul li {
-                font-size: $small-font;
-
-                i {
-                    color: #b5c4cc;
-                    padding-right: 10px;
-                }
+            i {
+                color: #b5c4cc;
+                display: inline-block;
+                margin-right: 10px;
             }
         }
 
+        // regole courses:
         .courses {
-
-            h3 {
-                padding: 5px 0;
-            }
-
             ul li {
-                font-size: 13px;
                 color: $primary;
 
                 i {
-                    font-size: $smaller-font;
+                    font-size: $small-font;
                     border: 3px solid $primary;
                     padding: 2px;
                     border-radius: 50%;
@@ -206,32 +206,31 @@ export default {
             }
         }
 
+        // regole book now:
         .book {
             width: 25%;
             text-align: center;
 
-            .btn {
-                color: #fff;
-                background-color: $primary;
-                padding: 10px 20px;
-                border-radius: 30px;
-                display: inline-block;
-                text-align: center;
+            a {
+                @include button;
                 margin-top: 15px;
-                width: auto;
+                text-align: center;
+                display: inline-block;
+                padding: 10px 20px;
             }
 
         }
     }
 }
 
+// regole sub-footer:
 .sub-footer {
-    background-color: #1c1d1e;
+    background-color: $bg-gray;
 
     .container {
         padding: 60px 0;
         font-size: $smaller-font;
-        color: $light-grey;
+        color: $navy;
         @include flex (both);
 
         span {
@@ -240,10 +239,10 @@ export default {
 
         .socials {
             ul {
-                display: flex;
+                @include flex(flex);
 
                 a {
-                    color: #fff;
+                    color: $white;
                     padding-left: 15px;
                 }
             }

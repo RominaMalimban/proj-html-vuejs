@@ -74,73 +74,76 @@ export default {
 @use '../styles/partials/mixins' as*;
 
 section {
-    background-color: #fff;
-    padding: 90px 0 230px;
+    background-color: $white;
+    padding: 90px 0 130px;
 
     .container {
         @include flex(both);
         position: relative;
 
-    }
+        // regole parte sx container:
+        .sx {
+            color: $navy;
+            width: 60%;
+            padding-right: 50px;
 
-    .sx {
-        color: $gray-text;
-        width: 60%;
-        padding-right: 50px;
+            h2 {
+                color: $gray-title;
 
-        h2 {
-            color: $gray-title;
+                // primo p dopo h2:
+                +p {
+                    margin: 30px 0;
+                }
+            }
 
-            +p {
+            p {
+                line-height: 35px;
+            }
+
+            .different-size {
+                font-size: 14px;
+            }
+        }
+
+        // regole parte dx container:
+        .dx {
+            width: 40%;
+            padding: 50px;
+            background-color: $white;
+            text-align: center;
+            border: 1px solid $border-card;
+            border-radius: 10px;
+            position: absolute;
+            right: 0;
+            top: -130px;
+            box-shadow: 0px 20px 5px 0px #ececec;
+
+            h3 {
+                margin-bottom: 50px;
+                color: $primary;
+            }
+
+            span {
+                color: $navy;
+            }
+
+            form {
+                @include flex(column);
                 margin: 30px 0;
+
+                input {
+                    padding: 10px;
+                    background-color: #f7f7f7;
+                    border: 1px solid #dfdfdf;
+                    border-radius: 5px;
+                    font-size: $smaller-font;
+                }
             }
-        }
 
-        .different-size {
-            font-size: 14px;
-        }
-    }
-
-    .dx {
-        width: 40%;
-        margin-left: 50px;
-        background-color: #fff;
-        text-align: center;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        padding: 50px;
-        position: absolute;
-        right: 0;
-        box-shadow: 0px 20px 10px 0px #ececec;
-
-        h3 {
-            margin-bottom: 50px;
-            color: $primary;
-        }
-
-        span {
-            color: $gray-text;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            margin: 30px 0;
-
-            input {
-                padding: 10px;
-                background-color: #f7f7f7;
-                border: 1px solid #dfdfdf;
-                border-radius: 5px;
-                font-size: $smaller-font;
+            a {
+                @include button;
+                padding: 10px 20px;
             }
-        }
-
-        a {
-            color: #fff;
-            background-color: $primary;
-            padding: 10px 20px;
-            border-radius: 30px;
         }
     }
 }

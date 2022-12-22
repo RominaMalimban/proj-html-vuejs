@@ -19,23 +19,10 @@ export default {
 </script>
 
 <template>
-
   <AppHeader />
-
   <SignUp />
-
   <AppBand />
-
   <AppMain />
-  <!-- section instructor -->
-
-  <!-- section testimonials -->
-
-  <!-- section latest news -->
-
-  <!-- section newsletter -->
-
-
   <AppFooter />
 </template>
 

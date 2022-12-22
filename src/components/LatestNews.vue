@@ -43,7 +43,7 @@ export default {
             <a href="#">MORE FROM THE BLOG</a>
         </div>
         <div class="angle">
-            <img src="../../public/img/latestnews-bottom-800x70.png" alt="">
+            <img src="/img/latestnews-bottom-800x70.png" alt="">
         </div>
     </section>
 
@@ -56,16 +56,14 @@ export default {
 section {
     background-image: url(/img/latestnews-background.jpg);
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex (col-center);
     height: 860px;
     position: relative;
 
     .container {
         padding: 70px 0 10px;
         text-align: center;
-        background-color: #fff;
+        background-color: $white;
         border-top: 5px solid #7195a9;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -84,8 +82,6 @@ section {
             .card {
                 width: calc(100% / 2 - 40px);
                 margin-inline: 20px;
-                // debug
-                // border: 1px solid black;
 
                 h3 {
                     padding: 20px 0 10px;
@@ -94,7 +90,7 @@ section {
 
                 span,
                 p {
-                    color: $gray-text;
+                    color: $navy;
                 }
 
                 .green-color {
@@ -104,19 +100,13 @@ section {
 
                 p {
                     padding: 20px 0 60px;
-
                 }
             }
         }
 
         a {
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: $primary;
+            @include button;
             padding: 10px 20px;
-            border-radius: 30px;
-            margin-left: 30px;
         }
     }
 

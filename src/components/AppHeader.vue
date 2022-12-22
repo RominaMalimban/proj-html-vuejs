@@ -1,50 +1,11 @@
 <script>
 
+import AppNavbar from './AppNavbar.vue';
+
 export default {
     name: "AppHeader",
-    data() {
-        return {
-            title: "Drive with Avada",
-            logo: "img/avada-drivers-logo-2x-300x58.png",
-            links: [
-                {
-                    text: "HOME",
-                    url: "#",
-                    current: true
-                },
-                {
-                    text: "ABOUT",
-                    url: "#",
-                    current: false
-                },
-                {
-                    text: "PRICES",
-                    url: "#",
-                    current: false
-                },
-                {
-                    text: "COURSES",
-                    url: "#",
-                    current: false,
-                    label: "NEW"
-                },
-                {
-                    text: "HOME",
-                    url: "#",
-                    current: false
-                },
-                {
-                    text: "LOCATIONS",
-                    url: "#",
-                    current: false
-                },
-                {
-                    text: "BLOG",
-                    url: "#",
-                    current: false
-                }
-            ]
-        }
+    components: {
+        AppNavbar
     }
 }
 
@@ -63,51 +24,35 @@ export default {
                 </div>
             </div>
         </div>
+        <!-- chiusura top header -->
 
         <!-- sub-header -->
         <div class="sub-header">
 
-            <!-- nav bar -->
-            <nav>
-                <div class="container">
-                    <a href="#">
-                        <img :src="logo" alt="logo">
-                    </a>
-
-                    <div class="dx">
-                        <ul>
-                            <li v-for="(link, index) in links" :key="index">
-                                <a :href="link.url" :class="{ active: link.current }">{{ link.text }}</a>
-                                <span v-if="link.label" class="new-label">{{ link.label }}</span>
-                            </li>
-
-                        </ul>
-
-                        <a href="#" class="btn">BOOK NOW</a>
-                    </div>
-
-                </div>
-            </nav>
-            <!-- chiusura nav bar -->
+            <!-- componente navbar -->
+            <AppNavbar />
 
             <div class="container">
-                <h1>{{ title }}</h1>
+                <h1>Drive with Avada</h1>
                 <h3>We offer the finest driving tuition money can buy</h3>
             </div>
 
             <div class="stickers">
-                <div>
+                <div class="sticker">
                     <i class="fa-solid fa-book"></i>
                     <span class="txt-sticker">Demos</span>
                 </div>
-                <div>
-                    <span class="green">&dollar; 39</span>
+                <div class="sticker">
+                    <div>
+                        <strong><span class="green dollar">&dollar;</span></strong>
+                        <strong><span class="green number">39</span></strong>
+                    </div>
                     <span class="txt-sticker">On Sale</span>
                 </div>
             </div>
 
         </div>
-        <!-- header bottom -->
+        <!-- chiusura sub-header -->
     </header>
 </template>
 
@@ -115,16 +60,18 @@ export default {
 @use '../styles/partials/variables' as*;
 @use '../styles/partials/mixins' as*;
 
+// regole top header
 .top-header {
     height: 40px;
     width: 100%;
-    background-color: #353637;
+    background-color: $bg-gray;
     font-size: $small-font;
 
     .container {
         height: 100%;
         @include flex(both);
-        color: $light-grey;
+        color: $navy;
+        font-weight: bold;
 
         i {
             padding-right: 10px;
@@ -132,6 +79,7 @@ export default {
     }
 }
 
+// regole sub-header
 .sub-header {
     height: 720px;
     background-image: url(/img/homepage-hero-background.jpg);
@@ -139,62 +87,9 @@ export default {
     position: relative;
     @include flex (center);
 
-    nav {
-        padding: 30px 0;
-        background-color: #666b6684;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-
-        .container {
-            // height: 100%;
-            @include flex(both);
-
-            .dx {
-                @include flex(both)
-            }
-
-            ul {
-                @include flex(both);
-
-                li {
-                    padding-left: 30px;
-
-                    a {
-                        color: #fff;
-                        font-size: 14px;
-                        font-weight: bold;
-
-                        &.active {
-                            color: $primary;
-                            border-bottom: 3px solid $primary;
-                        }
-                    }
-
-                    .new-label {
-                        color: white;
-                        font-size: 12px;
-                        margin-left: 5px;
-                        background-color: $primary;
-                        padding: 3px 5px;
-                        border-radius: 3px;
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            .btn {
-                @include button;
-                padding: 10px 20px;
-            }
-
-        }
-    }
-
     h1,
     h3 {
-        color: #fff;
+        color: $white;
     }
 
     h1 {
@@ -207,32 +102,42 @@ export default {
         right: 15px;
         top: 110px;
 
-        i {
-            color: #32465a;
-        }
-
-        .green {
-            color: $primary;
-            font-weight: bolder;
-        }
-
-        div {
+        .sticker {
             text-align: center;
-            padding: 10px 5px;
+            padding: 5px;
             background-color: #fff;
             margin-bottom: 10px;
-            border-radius: 15px;
-        }
+            border-radius: 10px;
+            position: relative;
 
-        span {
-            display: block;
+            i {
+                color: #33475b;
+            }
 
-            &.txt-sticker {
-                color: #32465a;
+            .green {
+                color: $primary;
+                font-weight: bolder;
+
+                &.dollar {
+                    font-size: 11px;
+                    position: absolute;
+                    top: 5px;
+                    left: 7px;
+                }
+
+                &.number {
+                    font-size: 18px;
+                }
+            }
+
+            .txt-sticker {
+                display: block;
+                color: #33475b;
                 font-size: $small-font;
                 padding-top: 5px;
             }
         }
+
     }
 }
 </style>

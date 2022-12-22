@@ -1,6 +1,4 @@
 <script>
-
-
 export default {
     name: "Newsletter",
 }
@@ -38,9 +36,7 @@ section {
     }
 
     form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(col-center);
 
         input,
         button {
@@ -49,10 +45,8 @@ section {
         }
 
         button {
-            color: #fff;
-            background-color: $primary;
+            @include button;
             border: 1px solid $primary;
-            border-radius: 30px;
             margin: 25px 0;
         }
 

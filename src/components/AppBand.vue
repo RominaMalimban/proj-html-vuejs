@@ -16,9 +16,7 @@ export default {
                 <i class="fa-solid fa-phone-flip"></i>
                 <span>1-800-555-555</span>
             </div>
-
         </div>
-
     </section>
 
 </template>
@@ -28,10 +26,10 @@ export default {
 @use '../styles/partials/mixins' as*;
 
 section {
-    background-image: url(../../public/img/horizontal-cta-background.jpg);
+    background-image: url(/img/horizontal-cta-background.jpg);
     background-position: center center;
-    padding: 70px 0;
-    color: #fff;
+    padding: 100px 0;
+    color: $white;
 
     .container {
         @include flex(both);
@@ -46,7 +44,7 @@ section {
         }
 
         i {
-            margin-right: 20px;
+            margin-right: 15px;
         }
     }
 }

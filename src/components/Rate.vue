@@ -23,18 +23,25 @@ export default {
 </script>
 
 <template>
-
     <section>
         <div class="container">
             <div class="cards">
                 <div class="card" v-for="(rate, index) in rates" :key="index">
                     <div class="circle">
+
+                        <!-- condizione 1: 95% mi mostra l'icona corrispondente -->
                         <i class="fa-solid fa-circle-notch" v-if="rate.percentage === '95%'"></i>
+
+                        <!-- condizione 2 e 3: 100% e 0% mi mostra le icone corrispondenti -->
+                        <!-- condizione 4: se 0% aggiungere classe 'different' -->
                         <i class="fa-regular fa-circle" v-if="rate.percentage === '100%' || rate.percentage === '0%'"
                             :class="rate.percentage === '0%' ? 'different' : ''">
                         </i>
+
+                        <!-- condizione per aggiunta pallino verde -->
                         <div class="zero" v-if="rate.percentage === '0%'"></div>
                         <span>{{ rate.percentage }}</span>
+
                     </div>
                     <span class="rate">{{ rate.type }}</span>
                 </div>
@@ -50,72 +57,64 @@ export default {
 
 section {
 
+    .cards {
+        position: relative;
+        top: -130px;
+        @include flex(flex);
+        margin: -8px;
 
+        .card {
+            width: calc(100% / 3 - 16px);
+            @include flex (col-center);
+            margin: 0 8px;
+            background-color: $white;
+            border: 1px solid $border-card;
+            border-top: 7px solid $primary;
+            border-radius: 10px;
+            box-shadow: 0px 20px 10px 0px #ebebeb;
+            padding: 40px 0;
 
-    .container {
+            .circle {
+                position: relative;
 
+                i {
+                    font-size: 150px;
+                    color: $primary;
 
-        .cards {
-            position: relative;
-            top: -130px;
-            display: flex;
-            margin: -5px;
-
-            .card {
-                width: calc(100% / 3 - 10px);
-                margin: 0 5px;
-                background-color: #fff;
-                border: 1px solid #c1c1c1;
-                border-top: 7px solid $primary;
-                border-radius: 10px;
-                box-shadow: 0px 20px 10px 0px #b7bec2;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                .circle {
-                    position: relative;
-
-                    i {
-                        padding-top: 20px;
-                        font-size: 150px;
-                        color: $primary;
-
-                        &.different {
-                            color: #f5f5f5;
-                        }
-                    }
-
-                    span {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        font-size: 30px;
-                        color: $gray-text;
-                    }
-
-                    .zero {
-                        background-color: $primary;
-                        width: 14px;
-                        height: 14px;
-                        color: $primary;
-                        border-radius: 50%;
-                        position: absolute;
-                        top: 20px;
-                        left: 50%;
-                        transform: translate(-50%, 0);
+                    &.different {
+                        color: #f5f5f5;
                     }
                 }
 
-                .rate {
-                    display: block;
-                    padding: 30px 0 60px;
-                    color: $gray-text;
+                span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 30px;
+                    color: $navy;
                 }
+
+                .zero {
+                    background-color: $primary;
+                    width: 14px;
+                    height: 14px;
+                    color: $primary;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+
+            .rate {
+                display: block;
+                padding: 30px 0 60px;
+                color: $navy;
             }
         }
     }
+
 }
 </style>
