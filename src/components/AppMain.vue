@@ -1,36 +1,26 @@
 <script>
 import Newsletter from './Newsletter.vue';
-import Testimonials from './Testimonials.vue'
+import Testimonials from './Testimonials.vue';
+import LatestNewsVue from './LatestNews.vue';
 
 export default {
     name: "AppMain",
     components: {
         Newsletter,
-        Testimonials
+        Testimonials,
+        LatestNews
     }
 }
 </script>
 
 <template>
 
-    <!-- <section>
-        <div>
-
-        </div>
-    </section> -->
     <Testimonials />
+    <LatestNews />
     <Newsletter />
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as*;
 @use '../styles/partials/mixins' as*;
-
-// section {
-//     background-image: url(/img/promise-background.jpg);
-//     background-position: left center;
-
-//     // debug
-//     height: 400px;
-// }
 </style>
